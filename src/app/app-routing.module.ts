@@ -5,7 +5,7 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 
 const routes: Routes = [{
   path: '',
-  component: MainComponent
+  component: MainComponent,
 }, {
   path: 'plan',
   // loadChildren: () => import('mfe1/Module').then(m => m.TableModule),
@@ -16,6 +16,20 @@ const routes: Routes = [{
       exposedModule: './Module'
   })
   .then(m => m.TableModule)
+}, {
+  path: 'plan-foo',
+  component: MainComponent,
+  data: {
+
+    reuseComponent: true,
+  }
+}, {
+  path: 'plan-foo/:id',
+  component: MainComponent,
+  data: {
+
+    reuseComponent: true,
+  }
 }];
 
 @NgModule({
