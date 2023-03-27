@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main/main.component';
 import { loadRemoteModule } from '@angular-architects/module-federation';
+import { ChildComponent } from './main/child/child.component';
 
 const routes: Routes = [{
   path: '',
@@ -18,14 +19,14 @@ const routes: Routes = [{
   .then(m => m.TableModule)
 }, {
   path: 'plan-foo',
-  component: MainComponent,
+  component: ChildComponent,
   data: {
 
     reuseComponent: true,
   }
 }, {
   path: 'plan-foo/:id',
-  component: MainComponent,
+  component: ChildComponent,
   data: {
 
     reuseComponent: true,

@@ -9,13 +9,8 @@ import { map } from 'rxjs';
   styleUrls: ['./main.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MainComponent implements OnInit {
-  url$ = this.route.url.pipe(map(value => value.join('/')));
+export class MainComponent {
 
-  constructor(private readonly route: ActivatedRoute) { }
-
-  ngOnInit(): void {
-    console.log('attach');
-  }
+  constructor() { }
 
 }

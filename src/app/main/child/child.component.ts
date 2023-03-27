@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-child',
@@ -8,11 +10,17 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 
 })
 export class ChildComponent implements OnInit {
-  @Input() url: string = '';
+  url$ = this.route.url.pipe(map(value => value.join('/')));
   
-  constructor() { }
+  constructor(private readonly route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log('attach');
+  }
+
+  ngOnDestroy() {
+    console.log('dettach');
+
   }
 
 }
