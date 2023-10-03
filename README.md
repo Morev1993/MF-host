@@ -1,8 +1,8 @@
 # MfHost
 
-ng add @angular-architects/module-federation@14 --port 4200 --type host --force
+`ng add @angular-architects/module-federation@14 --port 4200 --type host --force`
 
-ng add @angular-architects/module-federation@14 --port 4201 --type remote --force
+`ng add @angular-architects/module-federation@14 --port 4201 --type remote --force`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
 
